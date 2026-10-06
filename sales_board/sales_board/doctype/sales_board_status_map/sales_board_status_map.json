@@ -1,0 +1,45 @@
+{
+ "doctype": "DocType",
+ "name": "Sales Board Status Map",
+ "module": "Sales Board",
+ "custom": 0,
+ "istable": 1,
+ "issingle": 0,
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "crm_status",
+   "label": "CRM Status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "reqd": 1,
+   "columns": 5
+  },
+  {
+   "fieldname": "status_type",
+   "label": "Status Type",
+   "fieldtype": "Select",
+   "options": "Won\nReversed\nLost\nTransit\nOpen\nInvalid",
+   "in_list_view": 1,
+   "reqd": 1,
+   "columns": 5
+  }
+ ],
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 0,
+ "owner": "Administrator",
+ "modified_by": "Administrator",
+ "modified": "2026-10-05 12:00:00.000000",
+ "creation": "2026-10-05 12:00:00.000000",
+ "index_web_pages_for_search": 0,
+ "states": [],
+ "links": [],
+ "actions": [],
+ "field_order": [
+  "crm_status",
+  "status_type"
+ ]
+}

@@ -1,0 +1,305 @@
+{
+ "doctype": "DocType",
+ "name": "Sales Board Settings",
+ "module": "Sales Board",
+ "custom": 0,
+ "istable": 0,
+ "issingle": 1,
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "assumptions_section",
+   "label": "Cost Assumptions",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "default_agent_fee",
+   "label": "Default Agent Fee per Delivery",
+   "fieldtype": "Currency",
+   "description": "Used only where an order has no Agent Delivery Fee"
+  },
+  {
+   "fieldname": "cost_of_sales_pct",
+   "label": "Cost of Sales (% of revenue)",
+   "fieldtype": "Percent"
+  },
+  {
+   "fieldname": "column_break_a",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "monthly_target",
+   "label": "Monthly Revenue Target",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "ranking_section",
+   "label": "Ranking Thresholds",
+   "fieldtype": "Section Break",
+   "description": "Minimum volume before a person is ranked"
+  },
+  {
+   "fieldname": "min_closer_orders",
+   "label": "Closer: min. valid orders",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "min_agent_orders",
+   "label": "Agent: min. dispatched orders",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "min_marketer_leads",
+   "label": "Marketer: min. valid leads",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "controls_section",
+   "label": "Controls",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "require_failure_reason",
+   "label": "Require Failure Reason on these statuses (desk form saves)",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "failure_reason_statuses",
+   "label": "Statuses that need a Failure Reason",
+   "fieldtype": "Small Text",
+   "description": "One per line"
+  },
+  {
+   "fieldname": "column_break_c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "snapshot_day",
+   "label": "Month-end snapshot runs on day",
+   "fieldtype": "Int",
+   "description": "Day of the following month on which last month is frozen (allows agents time to update statuses)"
+  },
+  {
+   "fieldname": "collections_section",
+   "label": "Agent Collections",
+   "fieldtype": "Section Break",
+   "description": "Collection statuses decide whether a delivered order counts as remitted. Statuses not listed (Draft, Failed, Reversed, Discarded) are ignored."
+  },
+  {
+   "fieldname": "remitted_statuses",
+   "label": "Remitted (cash received)",
+   "fieldtype": "Small Text",
+   "description": "One per line"
+  },
+  {
+   "fieldname": "in_progress_statuses",
+   "label": "In progress (declared, not yet received)",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "column_break_coll",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "review_statuses",
+   "label": "Needs review",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "revenue_net_of_discounts",
+   "label": "Recognise revenue net of agent discounts",
+   "fieldtype": "Check",
+   "description": "Revenue = order total less the discount recorded on the agent collection"
+  },
+  {
+   "fieldname": "inventory_section",
+   "label": "Inventory Board",
+   "fieldtype": "Section Break",
+   "description": "Agent locations come from the Warehouse on each Agents record. List your central stores here."
+  },
+  {
+   "fieldname": "hq_warehouses",
+   "label": "HQ Warehouses",
+   "fieldtype": "Table",
+   "options": "Sales Board HQ Warehouse"
+  },
+  {
+   "fieldname": "no_stock_statuses",
+   "label": "CRM statuses meaning 'no stock'",
+   "fieldtype": "Small Text",
+   "description": "One per line. Used by Lost Sales from Stock-outs."
+  },
+  {
+   "fieldname": "column_break_inv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "understock_days",
+   "label": "Understocked below (days of cover)",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "overstock_days",
+   "label": "Overstocked above (days of cover)",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "idle_days",
+   "label": "Idle after (days without a delivery)",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "cover_lookback_days",
+   "label": "Sales lookback for days of cover",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "large_adjustment_value",
+   "label": "Flag adjustments at or above (\u20a6)",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "pack_section",
+   "label": "Monthly Management Pack",
+   "fieldtype": "Section Break",
+   "description": "Built on the snapshot day for the month just closed."
+  },
+  {
+   "fieldname": "pack_enabled",
+   "label": "Build the monthly pack",
+   "fieldtype": "Check",
+   "default": "1"
+  },
+  {
+   "fieldname": "pack_auto_send",
+   "label": "Send without review",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "pack_reviewer",
+   "label": "Reviewer",
+   "fieldtype": "Link",
+   "options": "User",
+   "description": "Gets the draft to add commentary before it is sent"
+  },
+  {
+   "fieldname": "column_break_pack",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pack_recipients",
+   "label": "Send to",
+   "fieldtype": "Small Text",
+   "description": "Email addresses, one per line. Leave blank to send to every active user with the Management role."
+  },
+  {
+   "fieldname": "status_section",
+   "label": "Status Mapping",
+   "fieldtype": "Section Break",
+   "description": "Won = delivered and paid. Reversed = delivered then cancelled/returned. Lost, Transit, Open, Invalid (duplicate)."
+  },
+  {
+   "fieldname": "status_map",
+   "label": "Status Map",
+   "fieldtype": "Table",
+   "options": "Sales Board Status Map"
+  },
+  {
+   "fieldname": "states_section",
+   "label": "States & Zones",
+   "fieldtype": "Section Break",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "states",
+   "label": "States",
+   "fieldtype": "Table",
+   "options": "Sales Board State"
+  },
+  {
+   "fieldname": "state_aliases",
+   "label": "State Spelling Variants",
+   "fieldtype": "Table",
+   "options": "Sales Board State Alias",
+   "description": "Add any variant that shows as 'Unmapped' in the Zone view"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "Management",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "owner": "Administrator",
+ "modified_by": "Administrator",
+ "modified": "2026-10-06 18:30:00.000000",
+ "creation": "2026-10-05 12:00:00.000000",
+ "index_web_pages_for_search": 0,
+ "states": [],
+ "links": [],
+ "actions": [],
+ "field_order": [
+  "assumptions_section",
+  "default_agent_fee",
+  "cost_of_sales_pct",
+  "column_break_a",
+  "monthly_target",
+  "ranking_section",
+  "min_closer_orders",
+  "min_agent_orders",
+  "min_marketer_leads",
+  "controls_section",
+  "require_failure_reason",
+  "failure_reason_statuses",
+  "column_break_c",
+  "snapshot_day",
+  "collections_section",
+  "remitted_statuses",
+  "in_progress_statuses",
+  "column_break_coll",
+  "review_statuses",
+  "revenue_net_of_discounts",
+  "inventory_section",
+  "hq_warehouses",
+  "no_stock_statuses",
+  "column_break_inv",
+  "understock_days",
+  "overstock_days",
+  "idle_days",
+  "cover_lookback_days",
+  "large_adjustment_value",
+  "pack_section",
+  "pack_enabled",
+  "pack_auto_send",
+  "pack_reviewer",
+  "column_break_pack",
+  "pack_recipients",
+  "status_section",
+  "status_map",
+  "states_section",
+  "states",
+  "state_aliases"
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "doctype": "DocType",
+ "name": "Sales Board HQ Warehouse",
+ "module": "Sales Board",
+ "custom": 0,
+ "istable": 1,
+ "issingle": 0,
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "warehouse",
+   "label": "Warehouse",
+   "fieldtype": "Link",
+   "options": "Warehouse",
+   "in_list_view": 1,
+   "reqd": 1,
+   "columns": 10
+  }
+ ],
+ "field_order": [
+  "warehouse"
+ ],
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 0,
+ "owner": "Administrator",
+ "modified_by": "Administrator",
+ "modified": "2026-10-06 18:00:00.000000",
+ "creation": "2026-10-06 18:00:00.000000",
+ "states": [],
+ "links": [],
+ "actions": []
+}

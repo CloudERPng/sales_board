@@ -1,0 +1,121 @@
+{
+ "doctype": "DocType",
+ "name": "Sales Board Snapshot",
+ "module": "Sales Board",
+ "custom": 0,
+ "istable": 0,
+ "issingle": 0,
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "report_name",
+   "label": "Report",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1,
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "variant",
+   "label": "View",
+   "in_list_view": 1,
+   "read_only": 1,
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company",
+   "in_standard_filter": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "period_start",
+   "label": "Period Start",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "period_end",
+   "label": "Period End",
+   "fieldtype": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "generated_on",
+   "label": "Captured On",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_result",
+   "fieldtype": "Section Break",
+   "collapsible": 1,
+   "label": "Stored Result"
+  },
+  {
+   "fieldname": "result",
+   "label": "Result (JSON)",
+   "fieldtype": "Long Text",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "Management",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "owner": "Administrator",
+ "modified_by": "Administrator",
+ "modified": "2026-10-05 12:00:00.000000",
+ "creation": "2026-10-05 12:00:00.000000",
+ "index_web_pages_for_search": 0,
+ "states": [],
+ "links": [],
+ "actions": [],
+ "field_order": [
+  "report_name",
+  "variant",
+  "company",
+  "column_break_1",
+  "period_start",
+  "period_end",
+  "generated_on",
+  "section_result",
+  "result"
+ ],
+ "autoname": "hash",
+ "in_create": 1,
+ "title_field": "report_name"
+}

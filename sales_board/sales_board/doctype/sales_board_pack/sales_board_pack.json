@@ -1,0 +1,138 @@
+{
+ "doctype": "DocType",
+ "name": "Sales Board Pack",
+ "module": "Sales Board",
+ "custom": 0,
+ "istable": 0,
+ "issingle": 0,
+ "autoname": "format:PACK-{company}-{period_start}",
+ "title_field": "period_start",
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "period_start",
+   "label": "Period Start",
+   "fieldtype": "Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "period_end",
+   "label": "Period End",
+   "fieldtype": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Draft\nSent",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "generated_on",
+   "label": "Generated On",
+   "fieldtype": "Datetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sent_on",
+   "label": "Sent On",
+   "fieldtype": "Datetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_commentary",
+   "label": "Management Commentary",
+   "fieldtype": "Section Break",
+   "description": "Appears on the Summary sheet and in the email body when the pack is sent."
+  },
+  {
+   "fieldname": "commentary",
+   "label": "Commentary",
+   "fieldtype": "Text Editor"
+  },
+  {
+   "fieldname": "section_sent",
+   "label": "Distribution",
+   "fieldtype": "Section Break",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "sent_to",
+   "label": "Sent To",
+   "fieldtype": "Small Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pack_file",
+   "label": "Pack File",
+   "fieldtype": "Attach",
+   "read_only": 1
+  }
+ ],
+ "field_order": [
+  "company",
+  "period_start",
+  "period_end",
+  "column_break_1",
+  "status",
+  "generated_on",
+  "sent_on",
+  "section_commentary",
+  "commentary",
+  "section_sent",
+  "sent_to",
+  "pack_file"
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "Management",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "period_start",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "owner": "Administrator",
+ "modified_by": "Administrator",
+ "modified": "2026-10-06 18:30:00.000000",
+ "creation": "2026-10-06 18:30:00.000000",
+ "states": [],
+ "links": [],
+ "actions": []
+}
